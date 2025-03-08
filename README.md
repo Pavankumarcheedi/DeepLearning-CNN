@@ -11,4 +11,4 @@ A CNN consists of multiple layers that extract and process image features. The k
 
 This diagram illustrates how a Convolutional Neural Network (CNN) processes an input image, extracts features, and classifies it into a category.
 
-![CNN Feature Learning](images-CNN/input_image.jpg)
+![CNN Image](images-CNN/input-image.jpg)
