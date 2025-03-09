@@ -93,7 +93,8 @@ Average pooling calculates the mean of pixel values within a defined window (e.g
 ### (b) Max Pooling vs. Average Pooling
 Max pooling selects the highest value from the feature map region, while average pooling computes the mean.
 
-![Max Pooling vs. Average Pooling](images-CNN/pooling%20both.gif)
+![Max Pooling vs. Average Pooling](images-CNN/pooling_both.gif)
+
 
 ### Benefits of Pooling:
 - Reduces computation by decreasing feature map dimensions.
