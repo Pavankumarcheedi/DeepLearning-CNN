@@ -28,9 +28,4 @@ The Transfer Learning approach includes:
 ### 🔹 CNN Architecture  
 ![CNN Model](README.md)  
 
-## 🏋️‍♂️ Model Training  
-The model is trained using **Categorical Crossentropy Loss** and **Adam Optimizer**, with frozen pre-trained layers and fine-tuned top layers.  
 
-```python
-base_model = tf.keras.applications.VGG16(weights="imagenet", include_top=False)
-base_model.trainable = False  # Freeze base model layers
