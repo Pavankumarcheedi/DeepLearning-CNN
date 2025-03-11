@@ -1,29 +1,36 @@
 # 🍎🍌 Fruit Classification using CNN & Transfer Learning 🍊🍇  
 
 ## 📌 Project Overview  
-This project implements **Transfer Learning** to classify different types of fruits using a **pre-trained CNN model** (e.g., VGG16, ResNet, or MobileNet). The model leverages pre-learned features to improve accuracy and reduce training time.  
+This project classifies various fruits using **Transfer Learning** with a **pre-trained MobileNetV2 CNN model**. The model leverages pre-learned features for better accuracy and efficiency.  
 
 ## 📂 Dataset  
-The dataset used for this project is publicly available on Kaggle:  
+The dataset is sourced from Kaggle:  
 [🔗 Fruits Classification Dataset](https://www.kaggle.com/datasets/cheedipavankumar/fruits-classification)  
 
-It contains images of different fruit categories used for training and testing the CNN model.  
-
+It contains labeled images of different fruit categories used for training, validation, and testing.  
 
 ## 🚀 Tech Stack  
 - **Python** 🐍  
 - **TensorFlow / Keras** 🤖  
-- **Transfer Learning (Pre-trained CNN models)**  
+- **MobileNetV2 (Pre-trained CNN)**  
 - **NumPy, Pandas, Matplotlib** 📊  
 
-## 📂 Dataset  
-The dataset contains images of various fruits, categorized into different classes. Each image is preprocessed and fed into the CNN model for training.  
-
 ## 🏗️ Model Architecture  
-The Transfer Learning approach includes:  
-1. **Pre-trained CNN Backbone** (e.g., VGG16) – Extracts high-level features  
+The model follows a **Transfer Learning** approach:  
+1. **Pre-trained MobileNetV2** (excluding top layers) – Extracts high-level features  
 2. **Custom Fully Connected Layers** – Adapts to fruit classification  
 3. **Softmax Activation** – Predicts fruit category  
+
+ 
+
+## ⚙️ Training & Optimization  
+- **Image Preprocessing**: Resized to **128x128**, normalized  
+- **Data Augmentation**: Rotation, shifting, zooming, flipping  
+- **Fine-Tuning**: Last **few layers** of MobileNetV2 are trainable  
+- **Regularization**: Dropout & L2 regularization  
+- **Optimized with Adam (Learning Rate: 0.0005)**  
+- **Callbacks**: Early Stopping, ReduceLROnPlateau, LearningRateScheduler  
+
 
 ### 🔹 CNN Architecture  
 ![CNN Model](README.md)  
