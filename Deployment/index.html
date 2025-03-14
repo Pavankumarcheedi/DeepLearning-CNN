@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Classification</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: url('https://images5.alphacoders.com/131/1318895.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    padding: 50px;
+    color: #131111; /* Change text color to white for contrast */
+}
+
+        .container {
+            max-width: 500px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+        .btn-custom:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+        .preview {
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+        }
+        .preview img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="mb-4">🍎 Fruit Classification 🍊</h1>
+    
+    <div class="container">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="file" accept="image/*" required class="form-control mb-3">
+            <button type="submit" class="btn btn-custom">Upload & Predict</button>
+        </form>
+
+        {% if message %}
+            <p class="mt-3 text-danger">{{ message }}</p>
+        {% endif %}
+
+        {% if prediction %}
+            <div class="mt-4 preview" id="predictionContainer" style="display: block;">
+                <h2 class="fw-bold">Prediction: {{ prediction }}</h2>
+                <img src="{{ image_path }}" alt="Uploaded Image" class="img-fluid">
+            </div>
+        {% else %}
+            <div class="preview" id="imagePreview" style="display: none;">
+                <img id="previewImg" src="#" alt="Selected Image" class="img-fluid">
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const previewContainer = document.getElementById('imagePreview');
+            const previewImg = document.getElementById('previewImg');
+
+            if (this.files.length > 0) {
+                const file = this.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    previewImg.src = e.target.result;
+                    previewContainer.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Ensure image is shown after prediction
+        window.onload = function() {
+            {% if prediction %}
+                document.getElementById('predictionContainer').style.display = 'block';
+            {% else %}
+                document.getElementById('predictionContainer').style.display = 'none';
+            {% endif %}
+        };
+    </script>
+
+</body>
+</html>
