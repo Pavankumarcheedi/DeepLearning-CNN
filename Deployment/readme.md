@@ -26,8 +26,8 @@ The application will be accessible at `http://127.0.0.1:5000/`.
 
 ## Example Screenshot
 ## Example Screenshot
-![Deployed Screenshot](Deployement/deployed_images/before.png)
-![Output Screenshot](Deployement/deployed_images/after.png)
+![Deployed Screenshot](Deployment/before.png)
+![Output Screenshot](Deployment/after.png)
 
 ## Issues & Troubleshooting
 - Ensure the `static/uploads/` directory exists for image uploads.
