@@ -1,7 +1,7 @@
 # Fruit Classification Model Deployment
 
 ## Project Structure
-'''
+```
 fruit-classification/
 │-- app.py                # Main Flask application
 │--fruit_classifier_model.h5  
@@ -9,8 +9,8 @@ fruit-classification/
 │   ├── uploads/          # Folder for uploaded images
 │-- templates/
 │   ├── index.html        # Webpage template
+```
 
-'''
 ###  Run the Flask App in command prompt
 
 python app.py
