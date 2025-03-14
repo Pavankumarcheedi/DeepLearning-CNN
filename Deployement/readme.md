@@ -25,9 +25,9 @@ The application will be accessible at `http://127.0.0.1:5000/`.
 4. The uploaded image and predicted fruit name will be displayed.
 
 ## Example Screenshot
-![Deployed Screenshot](/before.jpg)
+![Deployed Screenshot](deployed_images/before.jpg)
 
-![output Screenshot](/after.jpg)
+![output Screenshot](deployed_images/after.jpg)
 ## Issues & Troubleshooting
 - Ensure the `static/uploads/` directory exists for image uploads.
 
