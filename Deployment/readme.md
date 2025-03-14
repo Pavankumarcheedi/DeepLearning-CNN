@@ -1,7 +1,7 @@
 # Fruit Classification Model Deployment
 
 ## Project Structure
-```
+
 fruit-classification/
 │-- app.py                # Main Flask application
 │--fruit_classifier_model.h5  
@@ -25,7 +25,7 @@ The application will be accessible at `http://127.0.0.1:5000/`.
 4. The uploaded image and predicted fruit name will be displayed.
 
 ## Example Screenshot
-## Example Screenshot
+
 ![Deployed Screenshot](Deployment/before.png)
 ![Output Screenshot](Deployment/after.png)
 
